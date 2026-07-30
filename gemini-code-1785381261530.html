@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Psicología del Conflicto y Negociación Directiva</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0;
+        }
+        #lesson-counter {
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        .lesson-content h2 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+        .lesson-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .lesson-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            line-height: 1.5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid var(--border);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary);
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        button:hover:not(:disabled) {
+            background-color: var(--secondary);
+        }
+        button:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Módulo 3: Psicología del Conflicto y Negociación Directiva</h1>
+        <div id="lesson-counter">Lección 1 de 12</div>
+    </header>
+
+    <div id="lesson-container" class="lesson-content">
+        <!-- El contenido de las lecciones se inyecta dinámicamente vía JavaScript -->
+    </div>
+
+    <div class="navigation">
+        <button id="prev-btn" onclick="changeLesson(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changeLesson(1)">Siguiente</button>
+    </div>
+</div>
+
+<script>
+    const lessons = [
+        {
+            title: "Lección 1: Naturaleza y Tipología de los Conflictos Organizacionales",
+            content: `
+                <h2>Comprendiendo la génesis de las tensiones corporativas</h2>
+                <p>El conflicto es un fenómeno inevitable e intrínseco a cualquier estructura organizacional dinámica. Lejos de representar únicamente una anomalía destructiva, las tensiones interpersonales e interdepartamentales reflejan la diversidad de intereses, la interdependencia de funciones y la búsqueda legítima de recursos dentro de la compañía. Para el directivo contemporáneo, la clave no radica en eliminar por completo el conflicto —lo cual esterilizaría la innovación—, sino en saber diagnosticar su naturaleza exacta para canalizarlo constructivamente hacia el rendimiento estratégico.</p>
+                <p>Los factores estructurales y conceptuales que determinan el surgimiento de estas disputas comprenden los siguientes aspectos esenciales:</p>
+                <ul>
+                    <li><strong>Interdependencia laboral:</strong> Grado en que los departamentos dependen unos de otros para completar sus flujos de trabajo operativos.</li>
+                    <li><strong>Escasez de recursos:</strong> Competencia directa por presupuestos limitados, talento especializado o infraestructura tecnológica prioritaria.</li>
+                    <li><strong>Diferencias de metas y valores:</strong> Divergencia en las prioridades funcionales a corto y largo plazo entre distintas áreas corporativas.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimensión del Conflicto</th>
+                            <th>Conflicto Funcional (Constructivo)</th>
+                            <th>Conflicto Disfuncional (Destructivo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Impacto en la organización</td>
+                            <td>Estimula la creatividad y el debate de ideas</td>
+                            <td>Paraliza operaciones y erosiona la cohesión</td>
+                        </tr>
+                        <tr>
+                            <td>Naturaleza del enfoque</td>
+                            <td>Centrado en procesos, métodos y estrategias</td>
+                            <td>Centrado en ataques personales y rivalidades</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>En conclusión, el primer paso hacia una dirección madura consiste en aceptar que la gestión de conflictos exige inteligencia emocional, visión sistémica y una intervención directiva oportuna.</p>
+            `
+        },
+        {
+            title: "Lección 2: Conflicto Funcional vs. Disfuncional en la Empresa",
+            content: `
+                <h2>Diferenciando el motor de innovación de la toxicidad operativa</h2>
+                <p>Dentro del ecosistema corporativo, resulta vital trazar una línea analítica clara entre el conflicto funcional y el disfuncional. El conflicto funcional actúa como un catalizador positivo que desafía el statu quo, previene el estancamiento intelectual y estimula la búsqueda de soluciones creativas a problemas complejos. Por el contrario, el conflicto disfuncional degenera en hostilidad interpersonal, polarización de bandos y una destrucción sistemática del clima laboral y la productividad.</p>
+                <p>Las características distintivas que permiten identificar y regular estas manifestaciones comprenden:</p>
+                <ul>
+                    <li><strong>Enfoque en las ideas:</strong> En el ámbito funcional, los debates discuten propuestas estratégicas y modelos operativos sin involucrar la dignidad personal.</li>
+                    <li><strong>Agotamiento emocional:</strong> El conflicto disfuncional genera altos niveles de estrés crónico, ansiedad y desconfianza transversal en el equipo.</li>
+                    <li><strong>Respuesta institucional:</strong> El liderazgo debe fomentar el primero mediante foros seguros de disenso, y erradicar enérgicamente el segundo mediante políticas disciplinarias.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indicador de Comportamiento</th>
+                            <th>Entorno Funcional Positivo</th>
+                            <th>Entorno Disfuncional Tóxico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Comunicación habitual</td>
+                            <td>Abierta, transparente y orientada a datos</td>
+                            <td>Defensiva, fragmentada y basada en rumores</td>
+                        </tr>
+                        <tr>
+                            <td>Resolución de desacuerdos</td>
+                            <td>Negociación basada en intereses mutuos</td>
+                            <td>Búsqueda de culpables y luchas de poder</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Gobernar esta delgada línea es una competencia directiva crítica para mantener equipos motivados, alineados y altamente competitivos frente a las exigencias del mercado.</p>
+            `
+        },
+        {
+            title: "Lección 3: El Modelo Thomas-Kilmann de Estilos de Gestión",
+            content: `
+                <h2>Afrontando las disputas según la asertividad y la cooperación</h2>
+                <p>El Instrumento de Modos de Conflicto de Thomas-Kilmann es un marco conceptual ampliamente validado que clasifica el comportamiento humano ante las disputas basándose en dos dimensiones fundamentales: la asertividad (el grado en que se intenta satisfacer los intereses propios) y la cooperatividad (el grado en que se intenta satisfacer los intereses de la otra parte). La combinación de estas variables genera cinco estilos distintos de afrontamiento.</p>
+                <p>Las características operativas de cada uno de estos cinco estilos directivos comprenden:</p>
+                <ul>
+                    <li><strong>Competir (Alta asertividad / Baja cooperación):</strong> Estilo enfocado en ganar a toda costa, útil en situaciones de crisis extrema o decisiones impopulares necesarias.</li>
+                    <li><strong>Colaborar (Alta asertividad / Alta cooperación):</strong> Busca integrar plenamente los intereses de ambas partes para lograr una solución óptima y creativa.</li>
+                    <li><strong>Transigir / Comprometerse (Intermedia cooperación y asertividad):</strong> Encuentra soluciones intermedias donde cada parte cede parcialmente en beneficio de la rapidez.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estilo Thomas-Kilmann</th>
+                            <th>Nivel Asertivo / Cooperativo</th>
+                            <th>Momento Óptimo de Aplicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Evitar</td>
+                            <td>Baja asertividad / Baja cooperación</td>
+                            <td>Ante disputas triviales o cuando el costo de intervenir es alto</td>
+                        </tr>
+                        <tr>
+                            <td>Complacer</td>
+                            <td>Baja asertividad / Alta cooperación</td>
+                            <td>Cuando mantener la relación a largo plazo es prioritario</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Dominar el modelo Thomas-Kilmann permite al líder abandonar respuestas automáticas y seleccionar estratégicamente el estilo de gestión más adecuado según la criticidad del conflicto.</p>
+            `
+        },
+        {
+            title: "Lección 4: Inteligencia Emocional y Autorregulación Directiva",
+            content: `
+                <h2>El dominio de las emociones propias ante situaciones de alta presión</h2>
+                <p>La inteligencia emocional es el cimiento sobre el cual se edifica cualquier proceso exitoso de resolución de conflictos y negociación directiva. En situaciones de alta tensión corporativa, los líderes que carecen de autorregulación suelen reaccionar mediante respuestas viscerales de lucha o huida, escalando innecesariamente las disputas y dañando su autoridad moral ante los equipos de trabajo bajo su responsabilidad.</p>
+                <p>Las dimensiones clave que componen la inteligencia emocional aplicada a la dirección comprenden:</p>
+                <ul>
+                    <li><strong>Autoconsciencia ejecutiva:</strong> Capacidad para reconocer en tiempo real el surgimiento de la ira, la frustración o la impaciencia antes de expresarlas verbalmente.</li>
+                    <li><strong>Regulación emocional:</strong> Habilidad para modular las respuestas impulsivas y mantener la compostura analítica bajo escenarios de crisis severa.</li>
+                    <li><strong>Empatía directiva:</strong> Disposición genuina para comprender la perspectiva emocional y cognitiva de la contraparte sin perder la objetividad profesional.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Respuesta Reactiva (Baja EI)</th>
+                            <th>Respuesta Inteligente (Alta EI)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Interrumpir y defenderse de forma agresiva</td>
+                            <td>Escuchar activamente y pausar antes de replicar</td>
+                        </tr>
+                        <tr>
+                            <td>Atacar a la persona por diferencias de criterio</td>
+                            <td>Separar el juicio personal del problema operativo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Cultivar la inteligencia emocional dota al directivo de una presencia ecuánime y persuasiva, capaz de desescalar tensiones complejas y proyectar seguridad en toda la organización.</p>
+            `
+        },
+        {
+            title: "Lección 5: Comunicación Asertiva y Escucha Activa",
+            content: `
+                <h2>Transmitiendo firmeza ejecutiva sin agresividad verbal</h2>
+                <p>La comunicación asertiva representa el punto de equilibrio perfecto entre la pasividad que inhibe la defensa de los intereses corporativos y la agresividad que vulnera la dignidad de los colaboradores. Al integrarse con la escucha activa, esta competencia permite procesar con precisión la información subyacente en cualquier disputa, asegurando que los mensajes directivos sean comprendidos, respetados y ejecutados sin generar resistencias innecesarias.</p>
+                <p>Las técnicas fundamentales para potenciar la asertividad y la escucha en la dirección comprenden:</p>
+                <ul>
+                    <li><strong>Uso de mensajes en primera persona (*Mensajes Yo*):</strong> Expresar el impacto de una conducta ajena sin incurrir en acusaciones directas o generalizaciones destructivas.</li>
+                    <li><strong>Escucha activa sin juicio previo:</strong> Permitir que el interlocutor exponga completamente su planteamiento sin planificar mentalmente la réplica durante su turno.</li>
+                    <li><strong>Parafraseo clarificador:</strong> Devolver a la contraparte el sentido esencial de su mensaje para validar la comprensión mutua antes de debatir soluciones.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estilo Comunicativo</th>
+                            <th>Comportamiento Asociado</th>
+                            <th>Efecto en el Conflicto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Comunicación Agresiva</td>
+                            <td>Impone criterios y descalifica al interlocutor</td>
+                            <td>Genera resistencia defensiva y ruptura del diálogo</td>
+                        </tr>
+                        <tr>
+                            <td>Comunicación Asertiva</td>
+                            <td>Defiende posturas con firmeza y respeto mutuo</td>
+                            <td>Facilita la apertura y el entendimiento constructivo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Dominar la asertividad dialógica transforma las interacciones directivas en canales fluidos de resolución, reduciendo drásticamente los malentendidos operativos en la empresa.</p>
+            `
+        },
+        {
+            title: "Lección 6: Comunicación No Violenta (CNV) en Entornos Corporativos",
+            content: `
+                <h2>Estructurando el diálogo directivo en cuatro pasos esenciales</h2>
+                <p>Desarrollada por Marshall Rosenberg, la Comunicación No Violenta (CNV) es un marco metodológico altamente eficaz para gestionar desacuerdos profundos y negociaciones difíciles en el ámbito empresarial. Su propósito central es conectar con las necesidades humanas universales que subyacen detrás de cualquier conducta conflictiva, permitiendo articular acuerdos sólidos basados en la empatía y la claridad operativa sin caer en la confrontación.</p>
+                <p>Los cuatro componentes secuenciales que estructuran el modelo de CNV en la dirección comprenden:</p>
+                <ul>
+                    <li><strong>Observación pura de hechos:</strong> Describir la situación objetiva sin añadir juicios de valor, interpretaciones subjetivas o descalificaciones previas.</li>
+                    <li><strong>Expresión de sentimientos:</strong> Identificar y manifestar la emoción generada por los hechos observados (ej. preocupación, inquietud, desacuerdo).</li>
+                    <li><strong>Identificación de necesidades:</strong> Reconocer qué necesidad o expectativa corporativa insatisfecha está provocando dicha reacción emocional.</li>
+                    <li><strong>Petición clara y accionable:</strong> Formular una solicitud específica, realizable y en positivo para resolver la discrepancia de manera colaborativa.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase de la CNV</th>
+                            <th>Enfoque Tradicional Defectuoso</th>
+                            <th>Enfoque Estructurado CNV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Observación inicial</td>
+                            <td>"Tú siempre llegas tarde con los informes."</td>
+                            <td>"El reporte financiero se entregó 48 horas tarde."</td>
+                        </tr>
+                        <tr>
+                            <td>Petición final</td>
+                            <td>"Necesito que seas más responsable."</td>
+                            <td>"Solicito que los cierres se programen un día antes."</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Aplicar la CNV en entornos corporativos permite desarmar la hostilidad latente, canalizando las discusiones hacia la cooperación mutua y la solución sostenible de problemas.</p>
+            `
+        },
+        {
+            title: "Lección 7: Negociación Basada en Intereses (Modelo Harvard)",
+            content: `
+                <h2>Separando a las personas del problema para crear valor mutuo</h2>
+                <p>La negociación basada en intereses, popularizada por el proyecto de negociación de Harvard, constituye el estándar de oro en la dirección moderna. A diferencia de la negociación distributiva tradicional (basada en regatear posiciones fijas donde lo que uno gana lo pierde el otro), este modelo busca expandir el pastel corporativo identificando los intereses y necesidades reales que se ocultan detrás de las posturas iniciales de las partes.</p>
+                <p>Los principios rectores que sustentan este enfoque integrador comprenden:</p>
+                <ul>
+                    <li><strong>Separar a las personas del problema:</strong> Atacar con firmeza el desafío operativo sin deteriorar el vínculo personal o la confianza institucional con la contraparte.</li>
+                    <li><strong>Enfocarse en intereses, no en posturas:</strong> Indagar el "por qué" de las demandas para descubrir necesidades compartidas que permitan soluciones creativas.</li>
+                    <li><strong>Generar opciones de beneficio mutuo:</strong> Diseñar alternativas anticipadas que satisfagan los objetivos prioritarios de ambos bandos antes de decidir.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimensión Negociadora</th>
+                            <th>Negociación Posicional Tradicional</th>
+                            <th>Negociación Basada en Intereses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Objetivo principal</td>
+                            <td>Defender una postura rígida y ganar la disputa</td>
+                            <td>Llegar a un acuerdo sabio, eficiente y duradero</td>
+                        </tr>
+                        <tr>
+                            <td>Tratamiento del oponente</td>
+                            <td>Considerado un adversario a vencer</td>
+                            <td>Considerado un socio para resolver el problema</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Dominar el modelo Harvard transforma al directivo en un negociador estratégico capaz de transformar confrontaciones estériles en alianzas corporativas sumamente rentables.</p>
+            `
+        },
+        {
+            title: "Lección 8: Criterios Objetivos y el Poder de la MAAN",
+            content: `
+                <h2>Protegiendo el acuerdo mediante estándares independientes y alternativas</h2>
+                <p>Para evitar que una negociación directiva se reduzca a una simple prueba de voluntades, presión jerárquica o desgaste financiero, es indispensable fundamentar las propuestas en criterios objetivos e independientes de la voluntad de las partes. Asimismo, todo líder debe calcular con precisión su MAAN (Mejor Alternativa a un Acuerdo Negociado), que representa el curso de acción óptimo al que puede recurrir si no se logra un pacto satisfactorio.</p>
+                <p>Los componentes clave para gestionar estas herramientas de protección y validación incluyen:</p>
+                <ul>
+                    <li><strong>Estándares de equidad y mercado:</strong> Uso de precedentes legales, tasaciones profesionales, costos de reposición o normativas sectoriales como base del acuerdo.</li>
+                    <li><strong>Definición estricta de la MAAN:</strong> Conocer el límite inferior de aceptación antes de sentarse a negociar, evitando aceptar acuerdos peores que la alternativa propia.</li>
+                    <li><strong>Fortalecimiento de la MAAN:</strong> Mejorar la posición de respaldo propia antes de la mesa de diálogo para negociar desde una posición de absoluta solidez.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto Clave</th>
+                            <th>Utilidad Práctica en la Negociación</th>
+                            <th>Riesgo de Ignorarlo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Criterios Objetivos</td>
+                            <td>Aportan legitimidad neutral y evitan caprichos</td>
+                            <td>Discusiones subjetivas basadas en egos directivos</td>
+                        </tr>
+                        <tr>
+                            <td>MAAN (BATNA)</td>
+                            <td>Define el punto de retiro y protege contra malos pactos</td>
+                            <td>Aceptar acuerdos perjudiciales por falta de opciones</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Gestionar con rigor los criterios objetivos y la MAAN dota al directivo de un blindaje analítico y estratégico insustituible en transacciones corporativas complejas.</p>
+            `
+        },
+        {
+            title: "Lección 9: Generación de Opciones de Beneficio Mutuo",
+            content: `
+                <h2>Ampliando el valor estratégico antes de repartir el resultado</h2>
+                <p>Un error común en la negociación directiva es centrarse exclusivamente en dividir un recurso limitado (como un presupuesto fijo o un porcentaje de participación), cayendo en una dinámica de suma cero. La negociación avanzada exige la capacidad de inventar opciones de beneficio mutuo (*ganar-ganar*), identificando diferencias complementarias entre las partes en cuanto a prioridades temporales, apetito por el riesgo o costos operativos.</p>
+                <p>Las estrategias metodológicas para expandir el valor conjunto en la mesa de negociación comprenden:</p>
+                <ul>
+                    <li><strong>Inventario desvinculado de opciones:</strong> Programar sesiones creativas de lluvia de ideas enfocadas en generar múltiples propuestas antes de comprometer decisiones finales.</li>
+                    <li><strong>Aprovechamiento de diferencias complementarias:</strong> Intercambiar concesiones sobre temas que tienen distinta valoración para cada parte (ej. ceder en plazos a cambio de mayor calidad).</li>
+                    <li><strong>Satisfacción de intereses subyacentes:</strong> Diseñar paquetes de acuerdos que cubran las necesidades críticas de ambos bandos simultáneamente.</li>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estrategia de Creación</th>
+                            <th>Enfoque Operativo</th>
+                            <th>Resultado Corporativo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Acuerdos de suma cero</td>
+                            <td>Repartir un pastel de tamaño fijo y limitado</td>
+                            <td>Competencia destructiva y relación desgastada</td>
+                        </tr>
+                        <tr>
+                            <td>Expansión del pastel</td>
+                            <td>Crear valor conjunto mediante complementariedades</td>
+                            <td>Beneficios optimizados y alianzas fortalecidas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Aprender a inventar opciones creativas distingue a los líderes excepcionales capaces de extraer el máximo rendimiento estratégico de cualquier acuerdo comercial o interno.</p>
+            `
+        },
+        {
+            title: "Lección 10: Tácticas de Negociación y Manejo de Bloqueos",
+            content: `
+                <h2>Contrarrestando tácticas duras y destrabando negociaciones estancadas</h2>
+                <p>En el mundo corporativo, es frecuente enfrentar contrapartes que utilizan tácticas de negociación duras o distributivas, como la exigencia de concesiones extremas, tácticas de presión temporal, ultimátums simulados o el uso de buenos y malos interlocutores. El directivo debe aprender a identificar estas maniobras sin caer en la provocación, aplicando contramedidas eficaces que restituyan la cooperación y desbloquen el proceso de acuerdo.</p>
+                <p>Las técnicas recomendadas para neutralizar bloqueos y tácticas de presión comprenden:</p>
+                <ul>
+                    <li><strong>Desvío de atención hacia el problema:</strong> Ignorar la táctica dura fingiendo no haberla percibido y redirigir el foco de la conversación hacia los criterios objetivos.</li>
+                    <li><strong>Reformulación de ultimátums:</strong> Convertir las amenazas de la contraparte en opciones hipotéticas de análisis conjunto (ej. "¿Qué pasaría si evaluamos otro escenario?").</li>
+                    <li><strong>Pausas estratégicas de enfriamiento:</strong> Solicitar un receso temporal cuando las emociones o los bloqueos técnicos amenacen con romper definitivamente la mesa de diálogo.</li>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Táctica Dura Detectada</th>
+                            <th>Intención de la Contraparte</th>
+                            <th>Contramedida Directiva Óptima</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ultimátum o presión de tiempo</td>
+                            <td>Forzar un cierre precipitado en desventaja</td>
+                            <td>Desmontar el plazo artificial apelando a criterios objetivos</td>
+                        </tr>
+                        <tr>
+                            <td>Exigencias crecientes</td>
+                            <td>Obtener concesiones adicionales de última hora</td>
+                            <td>Exigir contraprestaciones proporcionales por cada cambio</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Mantener el control emocional y metodológico frente a tácticas agresivas asegura que el directivo proteja los intereses de su organización sin comprometer la integridad del pacto.</p>
+            `
+        },
+        {
+            title: "Lección 11: Negociación Intercultural y Global",
+            content: `
+                <h2>Adaptando estilos de diálogo a contextos internacionales diversos</h2>
+                <p>En el entorno económico globalizado actual, los directivos interactúan frecuentemente con socios, proveedores y clientes procedentes de marcos culturales radicalmente diversos. Las diferencias en la percepción del tiempo, la jerarquía, el estilo de comunicación (directo vs. indirecto) y la importancia de las relaciones personales frente a los contratos formales pueden generar malentendidos críticos si no se adaptan las estrategias de negociación.</p>
+                <p>Las dimensiones culturales clave que todo líder global debe dominar comprenden:</p>
+                <ul>
+                    <li><strong>Estilo de comunicación contextual:</strong> Diferenciar entre culturas de alto contexto (donde el mensaje depende de sutilezas y relaciones) y de bajo contexto (explícitas y basadas en datos).</li>
+                    <li><strong>Construcción de confianza relacional:</strong> Asignar tiempo suficiente al desarrollo de vínculos personales previos antes de iniciar formalmente la negociación comercial en determinadas regiones.</li>
+                    <li><strong>Aceptación de la jerarquía:</strong> Respetar los protocolos de toma de decisiones jerárquicas en corporaciones internacionales donde la autoridad final recae exclusivamente en la alta dirección.</li>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimensión Cultural</th>
+                            <th>Cultura Directa (Bajo Contexto)</th>
+                            <th>Cultura Relacional (Alto Contexto)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enfoque del contrato</td>
+                            <td>El documento escrito prima sobre la relación</td>
+                            <td>La relación personal prima sobre el documento escrito</td>
+                        </tr>
+                        <tr>
+                            <td>Gestión de desacuerdos</td>
+                            <td>Confrontación abierta de ideas basada en hechos</td>
+                            <td>Evitación de la confrontación pública para salvar la cara</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>La sensibilidad intercultural dota al directivo de la flexibilidad necesaria para cerrar acuerdos transfronterizos exitosos, evitando roces por diferencias de origen corporativo.</p>
+            `
+        },
+        {
+            title: "Lección 12: Cierre, Formalización y Cumplimiento de Acuerdos",
+            content: `
+                <h2>Blindando la implementación y previniendo disputas futuras</h2>
+                <p>Una negociación exitosa no culmina con el apretón de manos en la mesa de diálogo, sino con la correcta formalización legal, operativa y psicológica del acuerdo alcanzado. La alta dirección debe garantizar que los compromisos queden plasmados en contratos claros, libres de ambigüedades interpretativas, y dotados de mecanismos de seguimiento y resolución de disputas futuras para asegurar su cumplimiento a largo plazo.</p>
+                <p>Los componentes esenciales para consolidar el cierre definitivo de una negociación comprenden:</p>
+                <ul>
+                    <li><strong>Redacción de cláusulas de contingencia:</strong> Incluir procedimientos estipulados para renegociar aspectos concretos ante cambios imprevistos en las variables del entorno.</li>
+                    <li><strong>Establecimiento de hitos de cumplimiento:</strong> Programar revisiones periódicas conjuntas para verificar que ambas partes ejecutan sus obligaciones en los plazos previstos.</li>
+                    <li><strong>Gestión de la transición interna:</strong> Comunicar con claridad los términos del acuerdo a los equipos operativos encargados de su ejecución en el día a día.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase de Cierre</th>
+                            <th>Riesgo de una Mala Gestión</th>
+                            <th>Práctica Directiva Recomendada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Formalización del contrato</td>
+                            <td>Ambigüedades que generen disputas posteriores</td>
+                            <td>Revisión jurídica y técnica exhaustiva del texto final</td>
+                        </tr>
+                        <tr>
+                            <td>Seguimiento operativo</td>
+                            <td>Incumplimiento silencioso de las contrapartes</td>
+                            <td>Auditorías de hitos y canales abiertos de comunicación</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Cerrar con rigor y profesionalismo asegura que los acuerdos negociados se traduzcan en valor operativo real y relaciones comerciales duraderas para la compañía.</p>
+            `
+        }
+    ];
+
+    let currentLesson = 0;
+
+    function renderLesson() {
+        const container = document.getElementById('lesson-container');
+        const counter = document.getElementById('lesson-counter');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        container.innerHTML = lessons[currentLesson].content;
+        counter.innerText = `Lección ${currentLesson + 1} de ${lessons.length}`;
+
+        prevBtn.disabled = currentLesson === 0;
+        nextBtn.disabled = currentLesson === lessons.length - 1;
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function changeLesson(direction) {
+        currentLesson += direction;
+        if (currentLesson < 0) currentLesson = 0;
+        if (currentLesson >= lessons.length) currentLesson = lessons.length - 1;
+        renderLesson();
+    }
+
+    // Inicializar la primera lección al cargar
+    window.onload = renderLesson;
+</script>
+
+</body>
+</html>
